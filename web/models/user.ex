@@ -6,6 +6,8 @@ defmodule Unique.User do
     field :password, :string
     field :email, :string
     has_many :post, Unique.Post
+    has_many :comment, Unique.Comment
+    has_many :like, Unique.Like
 
     timestamps
   end

@@ -16,5 +16,10 @@ defmodule Unique.User do
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
+    |> validate_length(:username, min: 1, max: 20)
+    |> validate_format(:email, ~r/@/)
+    |> validate_length(:password, min: 6, max: 255)
+    |> unique_constraint(:email)
+    |> unique_constraint(:username)
   end
 end

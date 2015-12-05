@@ -36,7 +36,7 @@ config :phoenix, :stacktrace_depth, 20
 config :unique, Unique.Repo,
   adapter: Ecto.Adapters.Postgres,
   username: "postgres",
-  password: "postgres",
+  password: "Em042496#",
   database: "unique_dev",
   hostname: "localhost",
   pool_size: 10

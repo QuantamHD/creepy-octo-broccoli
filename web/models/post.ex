@@ -6,6 +6,9 @@ defmodule Unique.Post do
     field :body, :string
     field :likes, :integer
     belongs_to :user, Unique.User
+    has_many :comment, Unique.Comment
+    has_many :post_tag, Unique.Post_Tag
+    has_many :like, Unique.Like
 
     timestamps
   end

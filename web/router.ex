@@ -19,6 +19,7 @@ defmodule Unique.Router do
     get "/", PageController, :index
     resources "/posts", PostController
     resources "/users", UserController
+    resources "/admin", AdminController
   end
 
   # Other scopes may use custom stacks.

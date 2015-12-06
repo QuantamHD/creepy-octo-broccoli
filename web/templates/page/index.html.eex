@@ -1,6 +1,7 @@
 <div class="jumbotron">
-  <h2>Welcome to Phoenix!</h2>
-  <p class="lead">A productive web framework that<br />does not compromise speed and maintainability.</p>
+  <h2>Welcome to Unique!</h2>
+  <p class="lead">A simple blog system that<br /> provides a user-friendly interface
+  </p>
 </div>
 
 <div class="row marketing">

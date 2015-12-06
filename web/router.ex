@@ -21,6 +21,7 @@ defmodule Unique.Router do
     resources "/posts", PostController
     resources "/users", UserController
     resources "/login", SessionController, only: [:new, :create, :delete]
+    resources "/admin", AdminController
   end
 
   # Other scopes may use custom stacks.

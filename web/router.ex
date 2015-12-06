@@ -7,6 +7,7 @@ defmodule Unique.Router do
     plug :fetch_flash
     plug :protect_from_forgery
     plug :put_secure_browser_headers
+    plug Unique.Auth, repo: Unique.Repo
   end
 
   pipeline :api do
@@ -19,6 +20,7 @@ defmodule Unique.Router do
     get "/", PageController, :index
     resources "/posts", PostController
     resources "/users", UserController
+    resources "/login", SessionController, only: [:new, :create, :delete]
   end
 
   # Other scopes may use custom stacks.

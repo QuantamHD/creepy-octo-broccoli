@@ -10,5 +10,7 @@ defmodule Unique.Repo.Migrations.CreatePost do
 
       timestamps
     end
+
+    
   end
 end

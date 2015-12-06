@@ -10,6 +10,9 @@
       <li>
         <%= link "Register New User", to: user_path(@conn, :new)%>
       </li>
+      <li>
+        <%= link "Login", to: session_path(@conn, :new)%>
+      </li>
     </ul>
   </div>
 

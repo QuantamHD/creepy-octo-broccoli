@@ -14,8 +14,9 @@ defmodule Unique.UserController do
     changeset = User.changeset(%User{}, user_params)
 
     case Repo.insert(changeset) do
-      {:ok, _user} ->
+      {:ok, user} ->
         conn
+        |> Unique.Auth.login(conn, user)
         |> put_flash(:info, "Welcome to our Unique Service")
         |> redirect(to: post_path(conn, :index))
 

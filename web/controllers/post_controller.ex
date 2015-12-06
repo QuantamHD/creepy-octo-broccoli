@@ -4,6 +4,7 @@ defmodule Unique.PostController do
   alias Unique.Post
 
   plug :scrub_params, "post" when action in [:create, :update]
+  plug :authenticate when action in [:index, :show, :new]
 
   def index(conn, _params) do
     posts = Repo.all(Post)
@@ -64,4 +65,16 @@ defmodule Unique.PostController do
     |> put_flash(:info, "Post deleted successfully.")
     |> redirect(to: post_path(conn, :index))
   end
+
+  def authenticate(conn, _opts) do
+    if conn.assigns.current_user do
+      conn
+    else
+      conn
+      |> put_flash(:error, "You must be logged in to view this.")
+      |> redirect(to: page_path(conn, :index))
+      |> halt()
+    end
+  end
+
 end
